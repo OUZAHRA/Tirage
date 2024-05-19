@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Modifier Utilisateur</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Modifier un utilisateur</h1>
+<form action="/admin/edit_user" method="post">
+    <label for="userId">ID de l'utilisateur:</label>
+    <input type="text" id="userId" name="userId" required><br>
+
+    <label for="firstName">Prénom:</label>
+    <input type="text" id="firstName" name="firstName"><br>
+
+    <label for="lastName">Nom:</label>
+    <input type="text" id="lastName" name="lastName"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password"><br>
+
+    <label for="role">Rôle:</label>
+    <select id="role" name="role">
+        <option value="ADMIN">Admin</option>
+        <option value="RESPONSABLE_TIRAGE">Responsable Tirage</option>
+        <option value="ENSEIGNANT">Enseignant</option>
+    </select><br>
+
+    <button type="submit">Modifier</button>
+</form>
+</body>
+</html>
+

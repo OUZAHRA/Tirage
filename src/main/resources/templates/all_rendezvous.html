@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des Rendez-vous</title>
+</head>
+<body>
+<h1>Liste des Rendez-vous</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Enseignant</th>
+        <th>Date</th>
+        <th>Heure</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="rendezvous : ${rendezvousList}">
+        <td th:text="${rendezvous.enseignant.username}"></td>
+        <td th:text="${rendezvous.date}"></td>
+        <td th:text="${rendezvous.time}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendez-vous</title>
+</head>
+<body>
+<h1>Rendez-vous</h1>
+<form th:action="@{/rendezvous}" method="post">
+    <div>
+        <label for="date">Date:</label>
+        <input type="datetime-local" id="date" name="date" required>
+    </div>
+    <div>
+        <label for="examen">Examen:</label>
+        <select id="examen" name="examen.id" required>
+            <option th:each="examen : ${examens}" th:value="${examen.id}" th:text="${examen.subject}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="salle">Salle:</label>
+        <select id="salle" name="salle.id" required>
+            <option th:each="salle : ${salles}" th:value="${salle.id}" th:text="${salle.name}"></option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Prendre rendez-vous</button>
+    </div>
+</form>
+<h2>Vos rendez-vous</h2>
+<ul>
+    <li th:each="rdv : ${rendezvous}">
+        <span th:text="${rdv.date}">Date</span> -
+        <span th:text="${rdv.examen.subject}">Examen</span> -
+        <span th:text="${rdv.salle.name}">Salle</span> -
+        <span th:text="${rdv.status}">Status</span>
+    </li>
+</ul>
+</body>
+</html>

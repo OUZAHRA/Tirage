@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Supprimer Rendez-vous</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Supprimer Rendez-vous</h1>
+<form th:action="@{/enseignant/delete_rendezvous}" method="post">
+    <input type="hidden" th:field="*{rendezvous.id}" th:value="${rendezvous.id}" />
+    <p>Êtes-vous sûr de vouloir supprimer ce rendez-vous?</p>
+    <p>Date: <span th:text="${rendezvous.date}"></span></p>
+    <p>Heure: <span th:text="${rendezvous.heure}"></span></p>
+    <p>Salle: <span th:text="${rendezvous.salle.nom}"></span></p>
+    <p>Copies: <span th:text="${rendezvous.copies}"></span></p>
+    <p>Sujet: <span th:text="${rendezvous.subject}"></span></p>
+    <button type="submit">Supprimer</button>
+    <a href="/enseignant/all_rendezvous">Annuler</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<body>
+<h1>Inscription</h1>
+<form th:action="@{/registration}" th:object="${user}" method="post">
+    <div>
+        <label for="firstName">Prénom:</label>
+        <input type="text" id="firstName" th:field="*{firstName}" required>
+    </div>
+    <div>
+        <label for="lastName">Nom:</label>
+        <input type="text" id="lastName" th:field="*{lastName}" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required>
+    </div>
+    <div>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" th:field="*{password}" required>
+    </div>
+    <div>
+        <label for="role">Rôle:</label>
+        <select id="role" th:field="*{role}" required>
+            <option th:value="ADMIN">Admin</option>
+            <option th:value="RESPONSABLE_TIRAGE">Responsable Tirage</option>
+            <option th:value="ENSEIGNANT">Enseignant</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">S'inscrire</button>
+    </div>
+</form>
+<div th:if="">
+
+</div>
+<div th:if="${#fields.hasErrors()}">
+    <p th:each="err : ${#fields.allErrors()}">
+        <span th:text="${err.defaultMessage}"></span>
+    </p>
+</div>
+</body>
+</html>

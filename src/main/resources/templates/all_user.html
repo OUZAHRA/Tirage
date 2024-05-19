@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tous les Rendez-vous</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Tous les Rendez-vous</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Salle</th>
+        <th>Enseignant</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Boucle sur la liste des rendez-vous -->
+    <tr th:each="rendezvous : ${rendezvousList}">
+        <td th:text="${rendezvous.id}"></td>
+        <td th:text="${rendezvous.date}"></td>
+        <td th:text="${rendezvous.heure}"></td>
+        <td th:text="${rendezvous.salle.nom}"></td>
+        <td th:text="${rendezvous.enseignant.nom}"></td>
+        <td>
+            <!-- Lien vers la page de modification avec l'ID du rendez-vous -->
+            <a th:href="@{/enseignant/edit_rendezvous/{id}(id=${rendezvous.id})}">Modifier</a>
+            <!-- Lien vers la page de suppression avec l'ID du rendez-vous -->
+            <a th:href="@{/enseignant/delete_rendezvous/{id}(id=${rendezvous.id})}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+

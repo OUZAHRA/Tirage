@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Modifier Rendez-vous</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Modifier Rendez-vous</h1>
+<form th:action="@{/enseignant/edit_rendezvous}" th:object="${rendezvous}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Date:</label>
+    <input type="date" th:field="*{date}" /><br/>
+    <label>Heure:</label>
+    <input type="time" th:field="*{heure}" /><br/>
+    <label>Salle:</label>
+    <select th:field="*{salle.id}">
+        <option th:each="salle : ${salles}" th:value="${salle.id}" th:text="${salle.nom}"></option>
+    </select><br/>
+    <label>Copies:</label>
+    <input type="number" th:field="*{copies}" /><br/>
+    <label>Sujet:</label>
+    <input type="text" th:field="*{subject}" /><br/>
+    <button type="submit">Enregistrer</button>
+</form>
+</body>
+</html>
+
