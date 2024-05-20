@@ -1,4 +1,4 @@
-package com.tirage.examen.entities.Dto;
+package com.tirage.examen.Dto;
 
 import com.tirage.examen.Role;
 import lombok.AllArgsConstructor;
@@ -14,6 +14,7 @@ public class UserRegistrationDto {
     private String email;
     private String password;
     private Role role;
+
 
     // getters and setters
 }

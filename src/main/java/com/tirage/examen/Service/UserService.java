@@ -1,7 +1,7 @@
 package com.tirage.examen.Service;
 
 import com.tirage.examen.Repository.UserRep;
-import com.tirage.examen.entities.Dto.UserRegistrationDto;
+import com.tirage.examen.Dto.UserRegistrationDto;
 import com.tirage.examen.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

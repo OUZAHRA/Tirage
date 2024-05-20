@@ -1,7 +1,7 @@
 package com.tirage.examen.Controller;
 
 import com.tirage.examen.Service.UserService;
-import com.tirage.examen.entities.Dto.UserRegistrationDto;
+import com.tirage.examen.Dto.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
