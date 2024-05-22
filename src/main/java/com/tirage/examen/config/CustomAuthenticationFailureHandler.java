@@ -11,7 +11,9 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CustomAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
 
@@ -28,7 +30,7 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
         // Set the error message as a request attribute
         request.setAttribute("loginError", errorMessage);
         // Forward to the login page
-        request.getRequestDispatcher("/Login").forward(request, response);
+        request.getRequestDispatcher("/login").forward(request, response);
     }
 
 
